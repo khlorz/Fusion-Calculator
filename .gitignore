@@ -366,3 +366,6 @@ FodyWeavers.xsd
 third-party/**
 !third-party/**/
 !third-party/**/.gitkeep
+
+# imgui VS project files
+!third-party/imgui/include/*.vcxproj*

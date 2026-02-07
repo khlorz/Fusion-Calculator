@@ -8,5 +8,9 @@
     <Platform Name="x86" />
   </Configurations>
   <Project Path="FusionCalculator.vcxproj" Id="695aa993-7964-4951-bc55-514ba70f8c89" />
+  <Project Path="third-party/imgui/include/imgui.vcxproj" Id="cfdd948d-6f79-4fa8-8cfa-f69cc56a0bda">
+    <BuildType Solution="Debug-DLL|x86" Project="Debug-LIB" />
+    <BuildType Solution="Release-DLL|x86" Project="Release-LIB" />
+  </Project>
   <Project Path="third-party/SDL/VisualC/SDL/SDL.vcxproj" Id="81ce8daf-ebb2-4761-8e45-b71abcca8c68" />
 </Solution>
