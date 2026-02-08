@@ -15,8 +15,6 @@
 #include <stdexcept>
 #include <cstring>
 
-static float global_scaling = 1.0f;
-
 static void InitSDL(SDL_Window*& window, SDL_Renderer*& renderer);
 static void InitImGui(SDL_Window* window, SDL_Renderer* renderer);
 
@@ -143,9 +141,10 @@ void InitImGui(SDL_Window* window, SDL_Renderer* renderer)
 
     ImGui::StyleColorsDark();
 
+    float main_scale = SDL_GetDisplayContentScale(SDL_GetPrimaryDisplay());
     ImGuiStyle& style = ImGui::GetStyle();
-    style.ScaleAllSizes(global_scaling);
-    style.FontScaleDpi = global_scaling;
+    style.ScaleAllSizes(main_scale);
+    style.FontScaleDpi = main_scale;
 
     ImGui_ImplSDL3_InitForSDLRenderer(window, renderer);
     ImGui_ImplSDLRenderer3_Init(renderer);
