@@ -8,6 +8,12 @@
     <Platform Name="x86" />
   </Configurations>
   <Project Path="FusionCalculator.vcxproj" Id="695aa993-7964-4951-bc55-514ba70f8c89" />
+  <Project Path="third-party/AoLibrary/include/AoLibrary.vcxproj" Id="a0f818d9-ac03-4e53-9eba-868afc976240">
+    <BuildType Solution="Debug-DLL|*" Project="Debug" />
+    <BuildType Solution="Debug-LIB|*" Project="Debug" />
+    <BuildType Solution="Release-DLL|*" Project="Release" />
+    <BuildType Solution="Release-LIB|*" Project="Release" />
+  </Project>
   <Project Path="third-party/imgui/include/imgui.vcxproj" Id="cfdd948d-6f79-4fa8-8cfa-f69cc56a0bda">
     <BuildType Solution="Debug-DLL|x86" Project="Debug-LIB" />
     <BuildType Solution="Release-DLL|x86" Project="Release-LIB" />

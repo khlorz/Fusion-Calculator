@@ -15,6 +15,8 @@
 #include <stdexcept>
 #include <cstring>
 
+#include "aol/aol.h"
+
 static void InitSDL(SDL_Window*& window, SDL_Renderer*& renderer);
 static void InitImGui(SDL_Window* window, SDL_Renderer* renderer);
 
@@ -65,6 +67,10 @@ int main(int, char**)
             SDL_RenderPresent(renderer);
         }
     }
+    catch (const AoL::RuntimeException& e)
+    {
+        std::cerr << e.What() << '\n';
+    }
     catch (const std::exception& e)
     {
         std::cerr << e.what() << '\n';
@@ -104,7 +110,7 @@ void InitSDL(SDL_Window*& window, SDL_Renderer*& renderer)
     {
         char buf[128];
         sprintf_s(buf, "Error: SDL_Init(): %s\n", SDL_GetError());
-        throw std::runtime_error(buf);
+        throw AoL::RuntimeException(buf);
     }
 
     float main_scale = SDL_GetDisplayContentScale(SDL_GetPrimaryDisplay());
