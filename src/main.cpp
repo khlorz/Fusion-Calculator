@@ -108,9 +108,8 @@ void InitSDL(SDL_Window*& window, SDL_Renderer*& renderer)
 
     if (!SDL_Init(SDL_INIT_VIDEO))
     {
-        char buf[128];
-        sprintf_s(buf, "Error: SDL_Init(): %s\n", SDL_GetError());
-        throw AoL::RuntimeException(buf);
+        std::string ex_what = AoL::StrConcat("Error: SDL_Init(): ", SDL_GetError());
+        throw AoL::RuntimeException{ std::move(ex_what) };
     }
 
     float main_scale = SDL_GetDisplayContentScale(SDL_GetPrimaryDisplay());
@@ -118,18 +117,16 @@ void InitSDL(SDL_Window*& window, SDL_Renderer*& renderer)
     window = SDL_CreateWindow(window_name, (int)(window_width * main_scale), (int)(window_height * main_scale), window_flags);
     if (window == nullptr)
     {
-        char buf[128];
-        sprintf_s(buf, "Error: SDL_Init(): %s\n", SDL_GetError());
-        throw std::runtime_error(buf);
+        std::string ex_what = AoL::StrConcat("Error: SDL_Init(): ", SDL_GetError());
+        throw AoL::RuntimeException{ std::move(ex_what) };
     }
 
     SDL_SetHint(SDL_HINT_RENDER_VSYNC, "1");
     renderer = SDL_CreateRenderer(window, nullptr);
     if (renderer == nullptr)
     {
-        char buf[128];
-        sprintf_s(buf, "Error: SDL_Init(): %s\n", SDL_GetError());
-        throw std::runtime_error(buf);
+        std::string ex_what = AoL::StrConcat("Error: SDL_Init(): ", SDL_GetError());
+        throw AoL::RuntimeException{ std::move(ex_what) };
     }
     SDL_SetWindowPosition(window, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
     SDL_ShowWindow(window);
@@ -139,7 +136,7 @@ void InitImGui(SDL_Window* window, SDL_Renderer* renderer)
 {
     if (ImGui::CreateContext() == nullptr)
     {
-        throw std::runtime_error("ImGui not initialized!");
+        throw AoL::RuntimeException("ImGui not initialized!");
     }
     ImGuiIO& io = ImGui::GetIO();
     io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;
