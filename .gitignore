@@ -372,8 +372,5 @@ third-party/**
 
 # exe and lib directory
 libs/**
-exe/**
 !libs/**/
-!exe/**/
 !libs/**/.gitkeep
-!exe/**/.gitkeep
