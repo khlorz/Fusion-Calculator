@@ -67,10 +67,12 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\..\..\Debug.props" />
+    <Import Project="..\..\..\BuildDirectoryLib.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\..\..\Release.props" />
+    <Import Project="..\..\..\BuildDirectoryLib.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -84,13 +86,9 @@
     <IncludePath>$(ProjectDir)imgui;$(SolutionDir)third-party\SDL\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(ProjectDir)build\lib\$(Platform)\Debug\bin\</OutDir>
-    <IntDir>$(ProjectDir)build\lib\$(Platform)\Debug\</IntDir>
     <IncludePath>$(ProjectDir)imgui;$(SolutionDir)third-party\SDL\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>$(ProjectDir)build\lib\$(Platform)\Release\bin\</OutDir>
-    <IntDir>$(ProjectDir)build\lib\$(Platform)\Release\</IntDir>
     <IncludePath>$(ProjectDir)imgui;$(SolutionDir)third-party\SDL\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
