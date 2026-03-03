@@ -368,7 +368,7 @@ third-party/**
 !third-party/**/.gitkeep
 
 # imgui VS project files
-!third-party/imgui/include/*.vcxproj*
+!third-party/imgui/include/**
 
 # exe and lib directory
 libs/**
