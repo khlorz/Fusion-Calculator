@@ -3,7 +3,7 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="FusionCalculator.vcxproj" Id="695aa993-7964-4951-bc55-514ba70f8c89" />
+  <Project Path="FusionCalculator.vcxproj" Id="3f98f98e-a28c-41b6-a048-ae04432a0b72" />
   <Project Path="third-party/AoLibrary/include/AoLibrary.vcxproj" Id="a0f818d9-ac03-4e53-9eba-868afc976240" />
   <Project Path="third-party/imgui/include/imgui.vcxproj" Id="cfdd948d-6f79-4fa8-8cfa-f69cc56a0bda" />
 </Solution>

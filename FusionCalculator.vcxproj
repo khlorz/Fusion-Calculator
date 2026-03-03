@@ -5,23 +5,34 @@
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
-    <ProjectConfiguration Include="Debug|x64">
-      <Configuration>Debug</Configuration>
-      <Platform>x64</Platform>
-    </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="Release|x64">
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="third-party\AoLibrary\include\AoLibrary.vcxproj">
+      <Project>{a0f818d9-ac03-4e53-9eba-868afc976240}</Project>
+    </ProjectReference>
+    <ProjectReference Include="third-party\imgui\include\imgui.vcxproj">
+      <Project>{cfdd948d-6f79-4fa8-8cfa-f69cc56a0bda}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{695aa993-7964-4951-bc55-514ba70f8c89}</ProjectGuid>
+    <ProjectGuid>{3f98f98e-a28c-41b6-a048-ae04432a0b72}</ProjectGuid>
     <RootNamespace>FusionCalculator</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -57,41 +68,25 @@
   </ImportGroup>
   <ImportGroup Label="Shared">
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="Debug.props" />
     <Import Project="BuildDirectoryExe.props" />
     <Import Project="ThirdPartyIncludes.props" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="Release.props" />
     <Import Project="BuildDirectoryExe.props" />
     <Import Project="ThirdPartyIncludes.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(IncludePath)</IncludePath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(IncludePath)</IncludePath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)exe\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)build\$(Platform)\$(Configuration)\exe\</IntDir>
-    <IncludePath>$(SolutionDir)third-party;$(SolutionDir)third-party/AoLibrary/include;$(SolutionDir)third-party/AoLibrary/include/aol/third-party;$(SolutionDir)third-party/imgui/include;$(SolutionDir)third-party/SDL/include;$(IncludePath)</IncludePath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)exe\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)build\$(Platform)\$(Configuration)\exe\</IntDir>
-    <IncludePath>$(SolutionDir)third-party;$(SolutionDir)third-party/AoLibrary/include;$(SolutionDir)third-party/AoLibrary/include/aol/third-party;$(SolutionDir)third-party/imgui/include;$(SolutionDir)third-party/SDL/include;$(IncludePath)</IncludePath>
-  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -99,14 +94,11 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)third-party;$(SolutionDir)third-party/AoLibrary/include;$(SolutionDir)third-party/AoLibrary/include/aol/third-party;$(SolutionDir)third-party/imgui/include;$(SolutionDir)third-party/SDL/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(SolutionDir)third-party\AoLibrary\include;$(SolutionDir)third-party\imgui\include;$(SolutionDir)third-party\SDL\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>mimalloc.lib;setupapi.lib;winmm.lib;imm32.lib;version.lib;fmt.lib;absl_strings.lib;absl_strings_internal.lib;absl_str_format_internal.lib;absl_base.lib;absl_log_severity.lib;absl_raw_logging_internal.lib;absl_spinlock_wait.lib;absl_throw_delegate.lib;absl_int128.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)third-party\AoLibrary\include\lib\third-party\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -114,22 +106,15 @@
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>false</SDLCheck>
+      <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)third-party;$(SolutionDir)third-party/AoLibrary/include;$(SolutionDir)third-party/AoLibrary/include/aol/third-party;$(SolutionDir)third-party/imgui/include;$(SolutionDir)third-party/SDL/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <BufferSecurityCheck>false</BufferSecurityCheck>
-      <AdditionalOptions>/Ob3 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(SolutionDir)third-party\AoLibrary\include;$(SolutionDir)third-party\imgui\include;$(SolutionDir)third-party\SDL\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>mimalloc.lib;setupapi.lib;winmm.lib;imm32.lib;version.lib;fmt.lib;absl_strings.lib;absl_strings_internal.lib;absl_str_format_internal.lib;absl_base.lib;absl_log_severity.lib;absl_raw_logging_internal.lib;absl_spinlock_wait.lib;absl_throw_delegate.lib;absl_int128.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
-      <AdditionalLibraryDirectories>$(SolutionDir)third-party\AoLibrary\include\lib\third-party\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -139,14 +124,14 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)third-party/AoLibrary/include;$(SolutionDir)third-party/imgui/include;$(SolutionDir)third-party/SDL/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)third-party\AoLibrary\include;$(SolutionDir)third-party\imgui\include;$(SolutionDir)third-party\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>mimalloc.lib;setupapi.lib;winmm.lib;imm32.lib;version.lib;fmt.lib;absl_strings.lib;absl_strings_internal.lib;absl_str_format_internal.lib;absl_base.lib;absl_log_severity.lib;absl_raw_logging_internal.lib;absl_spinlock_wait.lib;absl_throw_delegate.lib;absl_int128.lib;SDL3.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)libs\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>absl_base.lib;absl_int128.lib;absl_log_severity.lib;absl_raw_logging_internal.lib;absl_spinlock_wait.lib;absl_str_format_internal.lib;absl_strings.lib;absl_strings_internal.lib;absl_throw_delegate.lib;fmt.lib;mimalloc.lib;SDL3.lib;setupapi.lib;winmm.lib;imm32.lib;version.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -154,28 +139,17 @@
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)third-party/AoLibrary/include;$(SolutionDir)third-party/imgui/include;$(SolutionDir)third-party/SDL/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>/Ob3 /utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)third-party\AoLibrary\include;$(SolutionDir)third-party\imgui\include;$(SolutionDir)third-party\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>mimalloc.lib;setupapi.lib;winmm.lib;imm32.lib;version.lib;fmt.lib;absl_strings.lib;absl_strings_internal.lib;absl_str_format_internal.lib;absl_base.lib;absl_log_severity.lib;absl_raw_logging_internal.lib;absl_spinlock_wait.lib;absl_throw_delegate.lib;absl_int128.lib;SDL3.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <AdditionalLibraryDirectories>$(SolutionDir)libs\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>absl_base.lib;absl_int128.lib;absl_log_severity.lib;absl_raw_logging_internal.lib;absl_spinlock_wait.lib;absl_str_format_internal.lib;absl_strings.lib;absl_strings_internal.lib;absl_throw_delegate.lib;fmt.lib;mimalloc.lib;SDL3.lib;setupapi.lib;winmm.lib;imm32.lib;version.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="src\main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="third-party\AoLibrary\include\AoLibrary.vcxproj">
-      <Project>{a0f818d9-ac03-4e53-9eba-868afc976240}</Project>
-    </ProjectReference>
-    <ProjectReference Include="third-party\imgui\include\imgui.vcxproj">
-      <Project>{cfdd948d-6f79-4fa8-8cfa-f69cc56a0bda}</Project>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
