@@ -367,8 +367,11 @@ third-party/**
 !third-party/**/
 !third-party/**/.gitkeep
 
-# imgui VS project files
-!third-party/imgui/include/**
+# imgui files
+!third-party/imgui/**
+
+# AoLibrary files
+!third-party/AoLibrary/**
 
 # exe and lib directory
 libs/**
