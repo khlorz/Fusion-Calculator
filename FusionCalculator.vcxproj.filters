@@ -1,22 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="configs">
+      <UniqueIdentifier>{a8d98a87-33f5-46a8-99d6-889cae95f83c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="configs\git">
+      <UniqueIdentifier>{93f28f2f-ba89-46de-b248-fde1713a20fa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
+    <Filter Include="configs\project props">
+      <UniqueIdentifier>{57ddca04-9fc4-454c-9053-6e225e08fede}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="documentations">
+      <UniqueIdentifier>{c5a9bdf1-8f87-4946-92d5-8d63c85f21b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="documentations\license">
+      <UniqueIdentifier>{b6f1fe20-a3c2-43d5-8427-8732f38f04ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="documentations\readme">
+      <UniqueIdentifier>{0c7e2acb-b582-4672-85b2-abb4758bf050}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="source files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>source files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore">
+      <Filter>configs\git</Filter>
+    </None>
+    <None Include=".gitattributes">
+      <Filter>configs\git</Filter>
+    </None>
+    <None Include="README.md">
+      <Filter>documentations\readme</Filter>
+    </None>
+    <None Include="Release.props">
+      <Filter>configs\project props</Filter>
+    </None>
+    <None Include="ThirdPartyIncludes.props">
+      <Filter>configs\project props</Filter>
+    </None>
+    <None Include="BuildDirectoryExe.props">
+      <Filter>configs\project props</Filter>
+    </None>
+    <None Include="BuildDirectoryLib.props">
+      <Filter>configs\project props</Filter>
+    </None>
+    <None Include="Debug.props">
+      <Filter>configs\project props</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="LICENSE.txt">
+      <Filter>documentations\license</Filter>
+    </Text>
   </ItemGroup>
 </Project>

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="internal">
+      <UniqueIdentifier>{da7dfe52-9ba7-4116-ba92-a1ae2ca313e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="serialization">
+      <UniqueIdentifier>{58a83108-b403-45ec-a2d4-7270b6c88cdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data_components">
+      <UniqueIdentifier>{f192d7a4-27e6-4189-b1d2-6e0a34d89c6d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="aol\aol.h" />
+    <ClInclude Include="aol\serialization\serialization.h">
+      <Filter>serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="aol\internal\algorithm.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="aol\internal\allocators.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="aol\internal\config.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="aol\internal\containers.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="aol\internal\dynamic_types.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="aol\internal\exceptions.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="aol\internal\hashes.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="aol\internal\macros.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="aol\internal\math.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="aol\internal\strings.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="aol\internal\traits.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="aol\internal\typedefs.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="aol\internal\types.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+    <ClInclude Include="aol\data_components\managers.h">
+      <Filter>data_components</Filter>
+    </ClInclude>
+    <ClInclude Include="aol\data_components\profiles.h">
+      <Filter>data_components</Filter>
+    </ClInclude>
+    <ClInclude Include="aol\internal\logging.h">
+      <Filter>internal</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="aol\aol.cpp" />
+  </ItemGroup>
+</Project>
