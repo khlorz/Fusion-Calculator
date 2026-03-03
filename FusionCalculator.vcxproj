@@ -29,6 +29,19 @@
       <Project>{cfdd948d-6f79-4fa8-8cfa-f69cc56a0bda}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
+    <None Include="BuildDirectoryExe.props" />
+    <None Include="BuildDirectoryLib.props" />
+    <None Include="Debug.props" />
+    <None Include="README.md" />
+    <None Include="Release.props" />
+    <None Include="ThirdPartyIncludes.props" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="LICENSE.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
